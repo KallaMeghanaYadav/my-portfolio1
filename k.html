@@ -1,0 +1,2026 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meghana Yadav | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#050816;
+    color:#f8fafc;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050816;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#2563eb,#9333ea);
+    border-radius:20px;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#2563eb;
+    opacity:.08;
+    filter:blur(120px);
+    border-radius:50%;
+    top:-150px;
+    left:-150px;
+    pointer-events:none;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#9333ea;
+    opacity:.08;
+    filter:blur(120px);
+    border-radius:50%;
+    bottom:-200px;
+    right:-150px;
+    pointer-events:none;
+    z-index:-2;
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    overflow:hidden;
+}
+
+.particle{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#60a5fa;
+    border-radius:50%;
+    opacity:.6;
+    animation:floatParticle linear infinite;
+}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.7;
+    }
+
+    80%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(5,8,22,.72);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(148,163,184,.08);
+}
+
+.navbar{
+    width:90%;
+    max-width:1200px;
+    height:75px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:25px;
+    font-weight:700;
+
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.logo span{
+    color:#64748b;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.nav-links a{
+    position:relative;
+    color:#94a3b8;
+    font-size:14px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:#60a5fa;
+    box-shadow:0 0 10px #60a5fa;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    width:100%;
+
+    display:flex;
+    align-items:center;
+
+    padding:120px 8% 70px;
+}
+
+.hero-container{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:70px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 14px;
+
+    border:1px solid rgba(96,165,250,.25);
+    border-radius:30px;
+
+    background:rgba(37,99,235,.08);
+
+    color:#93c5fd;
+    font-size:12px;
+    letter-spacing:1.5px;
+
+    margin-bottom:25px;
+}
+
+.status-dot{
+    width:7px;
+    height:7px;
+    background:#22c55e;
+    border-radius:50%;
+    box-shadow:0 0 12px #22c55e;
+}
+
+.hero h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(45px,6vw,78px);
+    line-height:1.05;
+    letter-spacing:-3px;
+}
+
+.hero h1 .gradient{
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #818cf8,
+        #c084fc
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    margin-top:22px;
+
+    font-size:25px;
+    color:#cbd5e1;
+    font-weight:500;
+}
+
+.typing{
+    color:#60a5fa;
+}
+
+.cursor{
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+.hero-description{
+    max-width:620px;
+    margin-top:20px;
+
+    color:#94a3b8;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:13px 22px;
+
+    border-radius:10px;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.primary-btn{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    box-shadow:
+        0 0 20px rgba(37,99,235,.25);
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 10px 35px rgba(37,99,235,.35);
+}
+
+.outline-btn{
+    border:1px solid #334155;
+    color:#cbd5e1;
+    background:rgba(15,23,42,.5);
+}
+
+.outline-btn:hover{
+    border-color:#60a5fa;
+    color:#60a5fa;
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual{
+    display:flex;
+    justify-content:center;
+}
+
+.profile-wrapper{
+    position:relative;
+    width:350px;
+    height:350px;
+}
+
+.profile-card{
+    position:absolute;
+    inset:35px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30,41,59,.85),
+            rgba(15,23,42,.8)
+        );
+
+    border:1px solid rgba(96,165,250,.25);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 0 50px rgba(37,99,235,.15),
+        inset 0 0 40px rgba(124,58,237,.05);
+
+    backdrop-filter:blur(15px);
+
+    z-index:2;
+}
+
+.avatar{
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1d4ed8,
+            #7c3aed
+        );
+
+    border:3px solid rgba(147,197,253,.4);
+
+    box-shadow:
+        0 0 35px rgba(59,130,246,.35);
+}
+
+.profile-name{
+    margin-top:20px;
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:22px;
+    font-weight:600;
+}
+
+.profile-role{
+    margin-top:5px;
+    color:#64748b;
+    font-size:13px;
+}
+
+.orbit{
+    position:absolute;
+    inset:0;
+
+    border:1px solid rgba(96,165,250,.2);
+    border-radius:50%;
+
+    animation:rotate 15s linear infinite;
+}
+
+.orbit::before{
+    content:"";
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#60a5fa;
+    box-shadow:0 0 20px #60a5fa;
+
+    top:20px;
+    left:50%;
+}
+
+.orbit.two{
+    inset:15px;
+    border-color:rgba(168,85,247,.2);
+
+    animation-duration:20s;
+    animation-direction:reverse;
+}
+
+.orbit.two::before{
+    background:#a855f7;
+    box-shadow:0 0 20px #a855f7;
+
+    top:auto;
+    bottom:15px;
+}
+
+@keyframes rotate{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+    padding:110px 8%;
+}
+
+.section-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-heading{
+    margin-bottom:55px;
+}
+
+.section-number{
+    color:#60a5fa;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:13px;
+    letter-spacing:3px;
+}
+
+.section-heading h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:42px;
+    margin-top:8px;
+}
+
+.section-heading p{
+    margin-top:10px;
+    color:#64748b;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:30px;
+}
+
+.glass{
+    background:rgba(15,23,42,.55);
+    border:1px solid rgba(148,163,184,.1);
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+}
+
+.about-text{
+    padding:35px;
+}
+
+.about-text p{
+    color:#94a3b8;
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+.about-highlight{
+    padding:35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.stat{
+    padding:18px 0;
+    border-bottom:1px solid rgba(148,163,184,.1);
+}
+
+.stat:last-child{
+    border-bottom:none;
+}
+
+.stat-number{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:32px;
+    font-weight:700;
+
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #a78bfa
+    );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.stat-text{
+    color:#64748b;
+    font-size:13px;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-section{
+    background:#070b1b;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.skill-box{
+    padding:30px;
+}
+
+.skill-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+}
+
+.skill-title h3{
+    font-size:15px;
+    font-weight:500;
+}
+
+.skill-title span{
+    color:#60a5fa;
+    font-size:13px;
+}
+
+.skill-bar{
+    height:6px;
+    background:#1e293b;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.skill-progress{
+    height:100%;
+    width:0;
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #9333ea
+    );
+
+    box-shadow:0 0 12px rgba(96,165,250,.4);
+
+    transition:width 1.5s ease;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project-card{
+    position:relative;
+    overflow:hidden;
+
+    padding:30px;
+
+    min-height:350px;
+
+    background:linear-gradient(
+        145deg,
+        rgba(15,23,42,.9),
+        rgba(15,23,42,.55)
+    );
+
+    border:1px solid rgba(148,163,184,.1);
+    border-radius:20px;
+
+    transition:.4s;
+}
+
+.project-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    background:#2563eb;
+    opacity:.08;
+
+    filter:blur(60px);
+
+    top:-70px;
+    right:-70px;
+
+    transition:.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(96,165,250,.35);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+}
+
+.project-card:hover::before{
+    opacity:.2;
+}
+
+.project-number{
+    color:#60a5fa;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.project-icon{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:25px 0 20px;
+
+    border-radius:15px;
+
+    background:rgba(37,99,235,.1);
+
+    border:1px solid rgba(96,165,250,.15);
+
+    font-size:25px;
+}
+
+.project-card h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:21px;
+}
+
+.project-card p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.8;
+    margin:15px 0 20px;
+}
+
+.tech-stack{
+    color:#60a5fa;
+    font-size:12px;
+    font-weight:600;
+}
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-section{
+    background:#070b1b;
+}
+
+.timeline{
+    position:relative;
+    max-width:850px;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:8px;
+    top:0;
+    bottom:0;
+
+    width:1px;
+
+    background:linear-gradient(
+        #2563eb,
+        #9333ea,
+        transparent
+    );
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:45px;
+    margin-bottom:35px;
+}
+
+.timeline-dot{
+    position:absolute;
+
+    left:2px;
+    top:7px;
+
+    width:13px;
+    height:13px;
+
+    border-radius:50%;
+
+    background:#60a5fa;
+
+    box-shadow:
+        0 0 15px #60a5fa;
+}
+
+.timeline-content{
+    padding:28px;
+}
+
+.timeline-year{
+    color:#60a5fa;
+    font-size:13px;
+    font-weight:600;
+}
+
+.timeline-content h3{
+    margin:10px 0 5px;
+    font-family:'Space Grotesk',sans-serif;
+}
+
+.timeline-content p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box{
+    padding:55px;
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.contact-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    background:#2563eb;
+    opacity:.08;
+
+    filter:blur(80px);
+
+    top:-150px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.contact-box h2{
+    position:relative;
+
+    font-family:'Space Grotesk',sans-serif;
+    font-size:38px;
+}
+
+.contact-box p{
+    position:relative;
+
+    color:#64748b;
+    max-width:600px;
+    margin:15px auto 30px;
+    line-height:1.8;
+}
+
+.contact-links{
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.contact-link{
+    padding:12px 18px;
+
+    border:1px solid #334155;
+    border-radius:10px;
+
+    color:#cbd5e1;
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.contact-link:hover{
+    color:#60a5fa;
+    border-color:#60a5fa;
+
+    box-shadow:
+        0 0 20px rgba(96,165,250,.12);
+
+    transform:translateY(-3px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:30px 8%;
+
+    border-top:1px solid rgba(148,163,184,.08);
+
+    text-align:center;
+
+    color:#475569;
+    font-size:13px;
+}
+
+footer span{
+    color:#60a5fa;
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#topBtn{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    display:none;
+
+    box-shadow:0 0 20px rgba(37,99,235,.3);
+
+    z-index:999;
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        margin-top:20px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        height:65px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        background:rgba(5,8,22,.97);
+
+        flex-direction:column;
+        align-items:center;
+
+        padding:25px;
+
+        transform:translateY(-150%);
+        transition:.4s;
+    }
+
+    .nav-links.active{
+        transform:translateY(0);
+    }
+
+    .hero{
+        padding-top:110px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .profile-wrapper{
+        width:290px;
+        height:290px;
+    }
+
+    .profile-card{
+        inset:30px;
+    }
+
+    .avatar{
+        width:120px;
+        height:120px;
+        font-size:45px;
+    }
+
+    .skills-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .section-heading h2{
+        font-size:34px;
+    }
+
+    .contact-box{
+        padding:35px 20px;
+    }
+
+    .contact-box h2{
+        font-size:30px;
+    }
+
+}
+
+@media(max-width:450px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     PARTICLES
+===================================================== -->
+
+<div id="particles"></div>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+
+<nav class="navbar">
+
+<a href="#home" class="logo">
+    Meghana<span>.</span>
+</a>
+
+<div class="menu-btn" id="menuBtn">
+    ☰
+</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#skills">Skills</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#education">Education</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-container">
+
+<div class="hero-text reveal">
+
+<div class="badge">
+<span class="status-dot"></span>
+AVAILABLE FOR OPPORTUNITIES
+</div>
+
+<h1>
+Hi, I'm
+<br>
+<span class="gradient">Kalla Meghana Yadav</span>
+</h1>
+
+<h2>
+I'm a <span class="typing" id="typing"></span><span class="cursor">|</span>
+</h2>
+
+<p class="hero-description">
+
+Passionate about technology, software development,
+web development, cloud computing and DevOps.
+I enjoy learning new technologies and turning ideas
+into practical projects.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn primary-btn">
+View My Work →
+</a>
+
+<a href="#contact" class="btn outline-btn">
+Let's Connect
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual reveal">
+
+<div class="profile-wrapper">
+
+<div class="orbit"></div>
+<div class="orbit two"></div>
+
+<div class="profile-card">
+
+<div class="avatar">
+👩🏻‍💻
+</div>
+
+<div class="profile-name">
+Meghana Yadav
+</div>
+
+<div class="profile-role">
+Computer Science Student
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="section-container">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+01 / ABOUT
+</div>
+
+<h2>About Me</h2>
+
+<p>A little about who I am and what I love doing.</p>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-text glass reveal">
+
+<p>
+I am a motivated student with an interest in software
+development and modern technologies. I enjoy learning
+new technologies and applying my knowledge by building
+practical projects.
+</p>
+
+<p>
+My areas of interest include web development,
+programming, cloud computing, DevOps and problem solving.
+</p>
+
+<p>
+I am continuously improving my technical knowledge and
+looking for opportunities where I can learn, contribute
+and grow as a technology professional.
+</p>
+
+</div>
+
+
+<div class="about-highlight glass reveal">
+
+<div class="stat">
+
+<div class="stat-number">
+03
+</div>
+
+<div class="stat-text">
+Featured Projects
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">
+04+
+</div>
+
+<div class="stat-text">
+Technology Areas
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">
+∞
+</div>
+
+<div class="stat-text">
+Curiosity to Learn
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section class="skills-section" id="skills">
+
+<div class="section-container">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+02 / SKILLS
+</div>
+
+<h2>My Skills</h2>
+
+<p>Technologies and tools I'm working with.</p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="skill-box glass reveal">
+
+<div class="skill-title">
+
+<h3>Programming</h3>
+<span>Learning</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div
+class="skill-progress"
+data-width="75%">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skill-box glass reveal">
+
+<div class="skill-title">
+
+<h3>Web Development</h3>
+<span>Learning</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div
+class="skill-progress"
+data-width="85%">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skill-box glass reveal">
+
+<div class="skill-title">
+
+<h3>Git & GitHub</h3>
+<span>Working Knowledge</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div
+class="skill-progress"
+data-width="75%">
+</div>
+
+</div>
+
+</div>
+
+
+<div class="skill-box glass reveal">
+
+<div class="skill-title">
+
+<h3>Cloud & DevOps</h3>
+<span>Learning</span>
+
+</div>
+
+<div class="skill-bar">
+
+<div
+class="skill-progress"
+data-width="65%">
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+<div class="section-container">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+03 / PROJECTS
+</div>
+
+<h2>Featured Projects</h2>
+
+<p>Some of the projects I've worked on.</p>
+
+</div>
+
+
+<div class="project-grid">
+
+
+<div class="project-card reveal">
+
+<div class="project-number">
+PROJECT 01
+</div>
+
+<div class="project-icon">
+🛒
+</div>
+
+<h3>
+Online Shopping Website
+</h3>
+
+<p>
+A web application designed to provide users with
+an online shopping experience where they can browse
+products and view product information.
+</p>
+
+<div class="tech-stack">
+HTML • CSS • JavaScript
+</div>
+
+</div>
+
+
+<div class="project-card reveal">
+
+<div class="project-number">
+PROJECT 02
+</div>
+
+<div class="project-icon">
+🎓
+</div>
+
+<h3>
+Student Application
+</h3>
+
+<p>
+A simple application designed to collect and manage
+student information using a user-friendly interface.
+</p>
+
+<div class="tech-stack">
+HTML • CSS • JavaScript
+</div>
+
+</div>
+
+
+<div class="project-card reveal">
+
+<div class="project-number">
+PROJECT 03
+</div>
+
+<div class="project-icon">
+☁️
+</div>
+
+<h3>
+Cloud Deployment Project
+</h3>
+
+<p>
+A project demonstrating application deployment using
+cloud and DevOps concepts.
+</p>
+
+<div class="tech-stack">
+Git • Docker • Cloud
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section class="education-section" id="education">
+
+<div class="section-container">
+
+<div class="section-heading reveal">
+
+<div class="section-number">
+04 / EDUCATION
+</div>
+
+<h2>Education</h2>
+
+<p>My academic journey.</p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content glass">
+
+<div class="timeline-year">
+2024 — 2027
+</div>
+
+<h3>
+Bachelor's Degree
+</h3>
+
+<p>
+Loyola Academy
+</p>
+
+<p>
+B.Sc. Computer Science and Cloud Computing
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+<div class="section-container">
+
+<div class="contact-box glass reveal">
+
+<div class="section-number">
+05 / CONTACT
+</div>
+
+<h2>
+Let's Build Something
+</h2>
+
+<p>
+Feel free to contact me for opportunities, projects
+or collaboration. I'm always interested in learning
+and connecting with new people.
+</p>
+
+
+<div class="contact-links">
+
+<a
+href="mailto:meghanayadav9d@gmail.com"
+class="contact-link">
+📧 Email
+</a>
+
+<a
+href="https://github.com/KallaMeghanaYadav"
+target="_blank"
+class="contact-link">
+🐙 GitHub
+</a>
+
+<a
+href="#"
+class="contact-link">
+💼 LinkedIn
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<p>
+© 2026 <span>Kalla Meghana Yadav</span>.
+Designed & Built with passion.
+</p>
+
+</footer>
+
+
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
+
+<button id="topBtn">
+↑
+</button>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   TYPING ANIMATION
+========================================================= */
+
+const typingElement =
+document.getElementById("typing");
+
+const words = [
+    "Computer Science Student",
+    "Cloud Enthusiast",
+    "DevOps Learner"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const currentWord =
+    words[wordIndex];
+
+    if(!deleting){
+
+        typingElement.textContent =
+        currentWord.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === currentWord.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1500);
+
+            return;
+        }
+
+    }else{
+
+        typingElement.textContent =
+        currentWord.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex =
+            (wordIndex + 1) % words.length;
+
+        }
+
+    }
+
+    setTimeout(
+        typeEffect,
+        deleting ? 45 : 80
+    );
+}
+
+typeEffect();
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(
+
+entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("active");
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.12
+}
+
+);
+
+revealElements.forEach(element=>{
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   SKILL BAR ANIMATION
+========================================================= */
+
+const skillBars =
+document.querySelectorAll(".skill-progress");
+
+const skillObserver =
+new IntersectionObserver(
+
+entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            const width =
+            entry.target.getAttribute("data-width");
+
+            entry.target.style.width = width;
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.5
+}
+
+);
+
+skillBars.forEach(bar=>{
+
+    skillObserver.observe(bar);
+
+});
+
+
+/* =========================================================
+   PARTICLE BACKGROUND
+========================================================= */
+
+const particles =
+document.getElementById("particles");
+
+for(let i=0;i<45;i++){
+
+    const particle =
+    document.createElement("span");
+
+    particle.classList.add("particle");
+
+    particle.style.left =
+    Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+    (Math.random() * 12 + 8) + "s";
+
+    particle.style.animationDelay =
+    (Math.random() * 10) + "s";
+
+    particle.style.opacity =
+    Math.random() * .7;
+
+    particles.appendChild(particle);
+
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 500){
+
+        topBtn.style.display = "block";
+
+    }else{
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+
+});
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+document.querySelectorAll("section");
+
+const navigationLinks =
+document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll",()=>{
+
+    let current = "";
+
+    sections.forEach(section=>{
+
+        const sectionTop =
+        section.offsetTop - 150;
+
+        if(window.scrollY >= sectionTop){
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navigationLinks.forEach(link=>{
+
+        link.style.color = "#94a3b8";
+
+        if(
+            link.getAttribute("href") ===
+            "#" + current
+        ){
+
+            link.style.color = "#60a5fa";
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   CONSOLE MESSAGE
+========================================================= */
+
+console.log(
+"🚀 Welcome to Meghana Yadav's Portfolio!"
+);
+
+</script>
+
+</body>
+</html>
+```
